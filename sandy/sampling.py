@@ -170,12 +170,12 @@ def multi_run(foo):
     >>> assert "reconr" in g
     >>> assert "broadr" not in g and "thermr" not in g and "purr" not in g and "heatr" not in g and "unresr" not in g and "gaspr" not in g
     """
-    def inner(cli="--help"):
+    def inner():
         """
         Parameters
         ----------
         """
-        iargs = parse(cli.split())
+        iargs = parse()
         if os.path.isdir(iargs.file):
             path = iargs.file
             for file in os.listdir(path):
@@ -186,7 +186,7 @@ def multi_run(foo):
     return inner
 
 
-# @multi_run
+@multi_run
 def run(iargs):
     """
 
