@@ -315,7 +315,7 @@ def write_float(x):
         y = f"{x:11.0f}"
     elif x == 0:
         y = f"{x:11.8f}"
-    elif abs(x) < 1E0 and abs(x) >= 0.99999996:
+    elif abs(x) < 1E0 and abs(x) > 0.99999995:
         y = f"{x:13.6e}".replace("e+00", "")
     elif abs(x) < 1E0 and abs(x) >= 1e-9:
         y = f"{x:13.6e}".replace("e-0", "-")
